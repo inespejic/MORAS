@@ -1,0 +1,12 @@
+CHIP Mult4 {
+
+	IN in[16];
+	OUT out[16];
+	
+	PARTS:
+	//input množi s 4 
+	Add16(a =in , b =in , out= InPutaDva ); 
+	Add16 (a = InPutaDva, b = InPutaDva, out= out); 
+
+
+}

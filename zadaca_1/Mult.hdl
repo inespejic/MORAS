@@ -1,0 +1,62 @@
+CHIP Mult
+{
+	IN a[16], b[16]; 
+	OUT out[16];
+	
+	PARTS:
+	//pomak u lijevo 
+	BitShiftL(in = a, out = pomak1);
+	BitShiftL(in = pomak1, out = pomak2);
+	BitShiftL(in = pomak2, out = pomak3);
+	BitShiftL(in = pomak3, out = pomak4);
+	BitShiftL(in = pomak4, out = pomak5);
+	BitShiftL(in = pomak5, out = pomak6);
+	BitShiftL(in = pomak6, out = pomak7);
+	BitShiftL(in = pomak7, out = pomak8);
+	BitShiftL(in = pomak8, out = pomak9);
+	BitShiftL(in = pomak9, out = pomak10);
+	BitShiftL(in = pomak10, out = pomak11);
+	BitShiftL(in = pomak11, out = pomak12);
+	BitShiftL(in = pomak12, out = pomak13);
+	BitShiftL(in = pomak13, out = pomak14);
+	BitShiftL(in = pomak14, out = pomak15);
+	BitShiftL(in = pomak15, out = pomak16);
+	
+	//b po znamenkama 
+	Mux16(a = false, b = a, sel = b[0], out = c1);
+	Mux16(a = false, b = pomak1, sel = b[1], out = c2);
+	Mux16(a = false, b = pomak2, sel = b[2], out = c3);
+	Mux16(a = false, b = pomak3, sel = b[3], out = c4);
+	Mux16(a = false, b = pomak4, sel = b[4], out = c5);
+	Mux16(a = false, b = pomak5, sel = b[5], out = c6);
+	Mux16(a = false, b = pomak6, sel = b[6], out = c7);
+	Mux16(a = false, b = pomak7, sel = b[7], out = c8);
+	Mux16(a = false, b = pomak8, sel = b[8], out = c9);
+	Mux16(a = false, b = pomak9, sel = b[9], out = c10);
+	Mux16(a = false, b = pomak10, sel = b[10], out = c11);
+	Mux16(a = false, b = pomak11, sel = b[11], out = c12);
+	Mux16(a = false, b = pomak12, sel = b[12], out = c13);
+	Mux16(a = false, b = pomak13, sel = b[13], out = c14);
+	Mux16(a = false, b = pomak14, sel = b[14], out = c15);
+	Mux16(a = false, b = pomak15, sel = b[15], out = c16);
+	
+	//zbrajanje svega 
+	Add16(a = c1, b = c2, out = d1);
+	Add16(a = c3, b = c4, out = d2);
+	Add16(a = c5, b = c6, out = d3);
+	Add16(a = c7, b = c8, out = d4);
+	Add16(a = c9, b = c10, out = d5);
+	Add16(a = c11, b = c12, out = d6);
+	Add16(a = c13, b = c14, out = d7);
+	Add16(a = c15, b = c16, out = d8);
+	
+	Add16(a = d1, b = d2, out = e1);
+	Add16(a = d3, b = d4, out = e2);
+	Add16(a = d5, b = d6, out = e3);
+	Add16(a = d7, b = d8, out = e4);
+	
+	Add16(a = e1, b = e2, out = r1);
+	Add16(a = e3, b = e4, out = r2);
+	
+	Add16(a = r1, b = r2, out = out);
+}

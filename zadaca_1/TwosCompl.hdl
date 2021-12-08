@@ -1,0 +1,14 @@
+CHIP TwosCompl {
+	IN in[16]; 
+	OUT out[16]; 
+
+	PARTS: 
+	//dvojni komplement je mat operacija nad binarnim brojevima 
+	//  1 -> 0 i 0 -> 1
+	Not16(in = in , out = NulaUJedan); 
+
+
+ 	// dodavanje jedinice (incrementor)
+	Inc16(in= NulaUJedan , out= out); 
+	
+}
