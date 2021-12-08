@@ -1,0 +1,12 @@
+CHIP  BitShiftL {
+	IN in[16]; 
+	OUT out[16]; 
+
+	PARTS: 
+	//pomak za jedno mjesto u lijevo 
+	//prvu znamenku ignorira 
+	//na kraj dodaje 0
+	And16(a[0] = false, a[1..15] = true,  b[0] = false, b[1..15] = in[0..14],  out = out);
+
+
+}
