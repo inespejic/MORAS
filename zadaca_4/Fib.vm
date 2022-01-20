@@ -1,0 +1,24 @@
+function RJ.fibonacci 0
+push argument 0
+push constant 0
+eq
+push argument 0
+push constant 1
+eq
+or
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push argument 0
+return
+label IF_FALSE0
+push argument 0
+push constant 1
+sub
+call RJ.fibonacci 1
+push argument 0
+push constant 2
+sub
+call RJ.fibonacci 1
+add
+return
