@@ -1,0 +1,35 @@
+class QS
+{
+	function int partition(Vint A, int s, int e){
+		var int i, pivot, j, swpW, swp;
+		let pivot = A[e];
+		let i = s;
+		let j = s;
+		while(j < e){
+			if(A[j] < pivot){
+				let swpW = A[j];
+				let A[j] = A[i];
+				let A[i] = swpW;
+
+				let i = i + 1;
+			}
+			let j = j + 1;
+		}
+		let swp = A[j];
+		let A[j] = A[i];
+		let A[i] = swp;
+
+		return i;
+
+	}
+	function void sort(Vint A, int s, int e){
+		var int p;
+		if (s < e){
+			let p = QS.partition(A, s, e);
+		
+			do QS.sort(A, s, (p - 1));
+			do QS.sort(A, (p + 1), e);
+		}else{}
+		return;
+	}
+}
