@@ -1,0 +1,27 @@
+function Graph.printCoordinateSystem 0
+push constant 0
+push constant 128
+push constant 256
+push constant 128
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+push constant 128
+push constant 256
+push constant 128
+call Screen.drawLine 4
+pop temp 0
+push constant 127
+push constant 0
+push constant 127
+push constant 256
+call Screen.drawLine 4
+pop temp 0
+push constant 128
+push constant 0
+push constant 128
+push constant 256
+call Screen.drawLine 4
+pop temp 0
+push constant 0
+return
