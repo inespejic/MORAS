@@ -1,0 +1,10 @@
+class Graph
+{
+	function void printCoordinateSystem(){
+		do Screen.drawLine(0,128,256,128);
+		do Screen.drawLine(0,128,256,128);
+		do Screen.drawLine(127,0,127,256);
+		do Screen.drawLine(128,0,128,256);
+		return;
+	}
+}
