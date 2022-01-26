@@ -1,0 +1,65 @@
+class Main
+{	
+	function int pot(int b, int e){
+        var int i, rj;
+        let i = 0;
+        let rj = 1;
+        while(i < e){
+            let rj = rj * b;
+
+            let i = i + 1;
+        }
+        return rj;
+    }
+	function int min(int a, int b){
+		if(a > b){
+			return b;
+		}else{
+			return a;
+		}
+	}
+	
+	function void main() 
+	{
+		var Vint V, W, X, Y, Z;
+		let V = Vint.new(3); //RADI!!!
+		do V.set(0, 5); // RADI!!
+		do V.set(1, 7); 
+		do V.print();
+		do Output.println();
+		// do Output.printString("V: ");
+		// do Output.printInt(V.len()); // RADI!
+		// do Output.println();
+		// do Output.printInt(V.get(0)); // RADI!
+		
+		
+		let W = Vint.new(3);
+		do W.set(0, 5);
+		do W.set(1, 7);
+		do W.print();
+		do Output.println();
+		
+		do Output.printString("V i W su jednaki: ");
+		do Output.printInt(Vint.is_eq(V, W));
+		do Output.println();
+
+
+		do V.print();
+		do Output.println();
+
+		do V.resize(2);
+
+		do V.print();
+		do Output.println();
+
+		do Output.printString("Nakon resize: V.len(): ");
+		do Output.printInt(V.len());
+		do Output.println();
+
+		// do Output.printString("V i W su slicni: ");
+		// do Output.printInt(Vint.elems(V, W));
+		do Output.println();
+		
+		return;
+	}
+}
