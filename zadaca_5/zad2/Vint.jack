@@ -22,16 +22,12 @@ class Vint
 
     method int len(){return size;}
     
-    method void resize(int m){ // ?!?
+    method void resize(int m){ 
         var int i, newSize, x;
         var Array arr;
         let x = Main.pot(2, m);
 
         let newSize = Main.min(size, x);
-
-        // do Output.printString("newsize : ");
-        // do Output.printInt(newSize);
-        // do Output.println();
 
         let arr = Array.new(x);
         let i = 0;
@@ -45,7 +41,7 @@ class Vint
         return;
     }
 
-    function boolean is_eq(Vint A, Vint B){ // ?!?
+    function boolean is_eq(Vint A, Vint B){ 
         var int j, d;
         
         if((A.len()) = (B.len())){
@@ -66,7 +62,7 @@ class Vint
         }
     }
     
-    function boolean elems(Vint A, Vint B){ // ?!?
+    function boolean elems(Vint A, Vint B){ 
         var Vint C, D;
         var int i, j, d, b;
         do Output.println();
